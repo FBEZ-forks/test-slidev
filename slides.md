@@ -1,6 +1,7 @@
 ---
 # You can also start simply with 'default'
 theme: default
+
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
 background: https://cover.sli.dev
@@ -24,6 +25,7 @@ mdc: true
 # seoMeta:
 #  ogImage: https://cover.sli.dev
 # Config required for slidev-component-poll addon
+favicon: /favicon.png
 pollSettings:
   anonymous: true
 ---
@@ -115,7 +117,15 @@ Hover on the bottom-left corner to see the navigation's controls panel, [learn m
   src="https://sli.dev/assets/arrow-bottom-left.svg"
   alt=""
 />
+
 <p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
+<img
+  v-click
+  class="absolute -bottom-9 -left-0 w-80 opacity-50"
+  src="https://sli.dev/assets/arrow-bottom-left.svg"
+  alt=""
+/>
+
 
 ---
 layout: two-cols
@@ -190,78 +200,29 @@ Notes can also sync with clicks
 -->
 
 ---
+layout: default
 level: 2
 ---
 
-# Shiki Magic Move
+# Test Level
 
-Powered by [shiki-magic-move](https://shiki-magic-move.netlify.app/), Slidev supports animations across multiple code snippets.
+* Hello
 
-Add multiple code blocks and wrap them with <code>````md magic-move</code> (four backticks) to enable the magic move. For example:
+<img
+  v-click
+  class="absolute -left-7 w-100 opacity-50"
+  src="/mistras.jpg"
+  alt=""
+/>
 
-````md magic-move {lines: true}
-```ts {*|2|*}
-// step 1
-const author = reactive({
-  name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-})
-```
 
-```ts {*|1-2|3-4|3-4,8}
-// step 2
-export default {
-  data() {
-    return {
-      author: {
-        name: 'John Doe',
-        books: [
-          'Vue 2 - Advanced Guide',
-          'Vue 3 - Basic Guide',
-          'Vue 4 - The Mystery'
-        ]
-      }
-    }
-  }
-}
-```
 
-```ts
-// step 3
-export default {
-  data: () => ({
-    author: {
-      name: 'John Doe',
-      books: [
-        'Vue 2 - Advanced Guide',
-        'Vue 3 - Basic Guide',
-        'Vue 4 - The Mystery'
-      ]
-    }
-  })
-}
-```
+<div v-click class="relative w-full h-[400px]">
+  <img src="/mistras.jpg" class="absolute top-40 right-20 w-100" />
+</div>
 
-Non-code blocks are ignored.
+<arrow v-after x1="350" y1="310" x2="600" y2="400" color="#953" width="2" arrowSize="1" />
 
-```vue
-<!-- step 4 -->
-<script setup>
-const author = {
-  name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-}
-</script>
-```
-````
 
 ---
 
@@ -275,11 +236,12 @@ You can use Vue components directly inside your slides.
 We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
 
 ```html
-<Counter :count="10" />
+<Counter :count="30" />
 ```
+<Youtube id="luoMHjh-XcQ" />
 
 <!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
+<Counter :count="30" m="t-4" />
 
 Check out [the guides](https://sli.dev/builtin/components.html) for more.
 
@@ -588,7 +550,7 @@ Double-click on the draggable elements to edit their positions.
 </v-drag>
 ```
 
-<v-drag pos="663,206,261,_,-15">
+<v-drag pos="486,402,261,_,50">
   <div text-center text-3xl border border-main rounded>
     Double-click me!
   </div>
@@ -602,7 +564,7 @@ Double-click on the draggable elements to edit their positions.
 <v-drag-arrow two-way />
 ```
 
-<v-drag-arrow pos="67,452,253,46" two-way op70 />
+<v-drag-arrow pos="67,452,577,-177" two-way op70 />
 
 ---
 src: ./pages/imported-slides.md
